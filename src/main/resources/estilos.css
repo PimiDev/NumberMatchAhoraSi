@@ -1,0 +1,12 @@
+.casilla-btn {
+    -fx-background-color: #ff5757;
+    -fx-text-fill: #500000;
+}
+.casilla-sugerida {
+    -fx-background-color: yellow;
+    -fx-text-fill: black;
+}
+.casilla-eliminada {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
