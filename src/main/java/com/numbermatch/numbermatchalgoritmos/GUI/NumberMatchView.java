@@ -5,18 +5,23 @@ import javafx.scene.layout.HBox;
 
 public class NumberMatchView extends HBox {
 
-    TableroView tableroView;
+    private TableroView tableroView;
+    private BotonesView botonesView;
+    private InfoView infoView;
+    private Tablero tablero;
 
-    public NumberMatchView(){
-        Tablero tb = new Tablero(3,3);
-        tableroView = new TableroView(tb);
-        this.getChildren().addAll(tableroView);
-        int concordancias = tb.contarConcordancias();
+    public NumberMatchView(int filas, int columnas) {
+        tablero = new Tablero(filas, columnas);
+        tableroView = new TableroView(tablero);
+        botonesView = new BotonesView();
+        infoView = new InfoView();
 
-        System.out.println(concordancias);
-
-        this.setStyle("-fx-background-color: #1a1a2e;");
-
+        this.getChildren().addAll(botonesView, tableroView, infoView);
+        this.setStyle("-fx-background-color: #1E1E2E;");
     }
 
+    public TableroView getTableroView() { return tableroView; }
+    public BotonesView getBotonesView() { return botonesView; }
+    public InfoView getInfoView() { return infoView; }
+    public Tablero getTablero() { return tablero; }
 }

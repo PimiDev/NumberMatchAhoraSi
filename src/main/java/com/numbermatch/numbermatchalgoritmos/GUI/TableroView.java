@@ -1,6 +1,7 @@
 package com.numbermatch.numbermatchalgoritmos.GUI;
 
 import com.numbermatch.numbermatchalgoritmos.Logica.Casilla;
+import com.numbermatch.numbermatchalgoritmos.Logica.ListaSimple;
 import com.numbermatch.numbermatchalgoritmos.Logica.Node;
 import com.numbermatch.numbermatchalgoritmos.Logica.Tablero;
 import javafx.geometry.Pos;
@@ -25,19 +26,22 @@ public class TableroView extends GridPane {
     public void dibujarTablero() {
         this.getChildren().clear();
 
-        int filas = tableroLogico.getFilas();
-        int columnas = tableroLogico.getColumnas();
+        Node<ListaSimple<Node<Casilla>>> filaActual = tableroLogico.getFilasPorNodos().getInicio();
+        int fila = 0;
 
-        Node<Casilla> actual = tableroLogico.getListaPrincipal().getInicio();
+        while (filaActual != null) {
+            Node<Node<Casilla>> nodoActual = filaActual.getInfo().getInicio();
+            int columna = 0;
 
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                if (actual != null) {
-                    CasillaView casillaUI = new CasillaView(actual);
-                    this.add(casillaUI, j, i);
-                    actual = actual.getRight();
-                }
+            while (nodoActual != null) {
+                CasillaView casillaUI = new CasillaView(nodoActual.getInfo());
+                this.add(casillaUI, columna, fila);
+                columna++;
+                nodoActual = nodoActual.getDown();
             }
+
+            fila++;
+            filaActual = filaActual.getDown();
         }
     }
 

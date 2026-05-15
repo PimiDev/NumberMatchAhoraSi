@@ -1,12 +1,70 @@
+/* === Casillas === */
+
 .casilla-btn {
-    -fx-background-color: #ff5757;
-    -fx-text-fill: #500000;
+    -fx-background-color: #C0392B;
+    -fx-background-radius: 6px;
+    -fx-text-fill: #FDECEA;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 0, 2);
 }
+
+.casilla-btn:hover {
+    -fx-background-color: #E74C3C;
+}
+
 .casilla-sugerida {
-    -fx-background-color: yellow;
-    -fx-text-fill: black;
+    -fx-background-color: #F0C040;
+    -fx-background-radius: 6px;
+    -fx-text-fill: #5A3E00;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
 }
+
+.casilla-sugerida:hover {
+    -fx-background-color: #F5D060;
+}
+
 .casilla-eliminada {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
+    -fx-opacity: 0.35;
+}
+
+/* === Botones de acción === */
+
+.boton-accion {
+    -fx-background-color: #2C3E50;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #ECF0F1;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-min-width: 42px;
+    -fx-min-height: 42px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+.boton-accion:hover {
+    -fx-background-color: #34495E;
+}
+
+.boton-accion:pressed {
+    -fx-background-color: #1A252F;
+    -fx-effect: none;
+}
+
+/* === Info panel === */
+
+.info-panel {
+    -fx-background-color: #2C3E50;
+    -fx-background-radius: 10px;
+    -fx-padding: 14px 20px;
+    -fx-spacing: 8px;
+}
+
+.info-label {
+    -fx-text-fill: #ECF0F1;
+    -fx-font-size: 13px;
 }
